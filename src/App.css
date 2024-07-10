@@ -25,14 +25,14 @@ li {
 }
 
 .slider{
-  background-image: url(../src/assets/Slider/banner1.png);
+  background-image: url(../public/assets/Slider/banner1.png);
   background-size: 100% 100%;
 
   @apply h-[400px] w-full flex justify-start p-4 my-10 items-center;
 }
 
 .slider-inner{
-  background-image: url(./assets/Slider/slider-inner.png);
+  background-image: url(../public/assets/Slider/slider-inner.png);
   background-size: 165% 100%;
   @apply transition transform duration-200 cursor-pointer hover:scale-105;
 } 
