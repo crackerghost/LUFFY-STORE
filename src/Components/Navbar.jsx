@@ -15,7 +15,7 @@ function Navbar() {
             <div className='menu-function flex w-3/12 justify-evenly items-center'>
                 <img src={"/assets/Navbar/search.png"} width={"35px"} height={"35px"} alt="" />
                 <img src={"/assets/Navbar/love.png"} width={"35px"} height={"35px"}  alt="" />
-                <img src={"/src/assets/Navbar/cart.png"}width={"35px"} height={"35px"}  alt="" />
+                <img src={"/assets/Navbar/cart.png"}width={"35px"} height={"35px"}  alt="" />
             </div>
 
         </div>
