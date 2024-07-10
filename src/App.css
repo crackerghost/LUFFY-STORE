@@ -28,7 +28,7 @@ li {
   background-image: url(../public/assets/Slider/banner1.png);
   background-size: 100% 100%;
 
-  @apply h-[400px] w-full flex justify-start p-4 my-5 items-center;
+  @apply h-[400px] w-full flex justify-start p-4 items-center;
 }
 
 .slider-inner{
