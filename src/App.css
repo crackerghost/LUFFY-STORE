@@ -1,42 +1,38 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+:root{
+  --blue-- : #2685C9;
+  --bluegray-- :#146096;
+  --graytrans-- : #83888b68;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.banner{
+  @apply bg-[--blue--] h-[43px] text-center text-white my-2 w-[100%] flex justify-center items-center cursor-pointer transition duration-200 hover:bg-[--bluegray--]
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+li {
+  @apply cursor-pointer font-bold text-gray-500 border-black transition-all duration-200 transform hover:border-b hover:text-black;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slider{
+  background-image: url(../src/assets/Slider/banner1.png);
+  background-size: 100% 100%;
+
+  @apply h-[400px] w-full flex justify-start p-4 my-10 items-center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+.slider-inner{
+  background-image: url(./assets/Slider/slider-inner.png);
+  background-size: 165% 100%;
+  @apply transition transform duration-200 cursor-pointer hover:scale-105;
+} 
