@@ -10,16 +10,16 @@ function App() {
 
   useEffect(()=>{
        const loaded = ()=>{
+        setTimeout(() => {
           setIsLoaded(true);
+        }, 1000);
 
           
        }
        window.addEventListener('load', loaded)
      
    
-       return () => {
-        window.removeEventListener('load', loaded);
-      };
+
   },[])
 
   if (!isLoaded) {
