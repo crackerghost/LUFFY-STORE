@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../Navbar'
 import Body from './Body'
 import NewCollection from './NewCollection'
+import Crousel from './Crousel'
 
 function Home() {
   return (
@@ -9,6 +10,7 @@ function Home() {
       <Navbar/>
       <Body/>
       <NewCollection/>
+      <Crousel/>
       </>
   
   )
