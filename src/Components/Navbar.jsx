@@ -11,7 +11,7 @@ function Navbar() {
             <img src={"/assets/Navbar/hamburger.png"} width={"40px"} height={"40px"} alt="" />
             </div>
             
-            <img src={"/assets/Navbar/Luffy Store.png"} width={"180px"} height={"70px"} alt="" />
+            <p className='logo-head'>Luffy Store</p>
             <div className='menu-function flex w-3/12 justify-evenly items-center'>
                 <img src={"/assets/Navbar/search.png"} width={"35px"} height={"35px"} alt="" />
                 <img src={"/assets/Navbar/love.png"} width={"35px"} height={"35px"}  alt="" />
