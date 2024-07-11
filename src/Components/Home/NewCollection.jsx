@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 
 function NewCollection() {
+  const [counter,setCounter] = useState(0)
+  const [review,setReview] = useState(0)
+
   const [list, setList] = useState([
     {
       image : "/assets/Slider/tshirt1.png"
@@ -14,6 +17,29 @@ function NewCollection() {
       image : "/assets/Slider/tshirt3.png"
     }
   ])
+
+  useEffect(() => {
+    const counterRun = () => {
+      let i = 0;
+      const interval = setInterval(() => {
+        if (i >= 8500) {
+          clearInterval(interval);
+        } else {
+          setCounter(prevCounter => prevCounter + 1);
+          i++;
+        }
+
+        if(i<=5000){
+          setReview(prevReview => prevReview + 1);
+          i++;
+        }
+      }, 0); // Adjust the interval time if necessary
+
+      return () => clearInterval(interval); // Cleanup on component unmount
+    };
+
+    counterRun();
+  }, []);
   
 
   return (
@@ -46,11 +72,11 @@ function NewCollection() {
               <p className='font-lato'>Founded</p>
            </div>
            <div>
-           <p className='font-bold font-lato text-[36px]'>8800k+</p>
+           <p className='font-bold font-lato text-[36px]'>{counter}k+</p>
            <p className='font-lato'>Product Sold</p>
            </div>
            <div>
-           <p className='font-bold font-lato text-[36px]'>5k+</p>
+           <p className='font-bold font-lato text-[36px]'>{review}+</p>
            <p className='font-lato'>Best Reviews</p>
            </div>
           </div>
