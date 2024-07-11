@@ -18,29 +18,33 @@ function NewCollection() {
     }
   ])
 
+  
   useEffect(() => {
     const counterRun = () => {
-      let i = 0;
       const interval = setInterval(() => {
-        if (i >= 8500) {
-          clearInterval(interval);
-        } else {
-          setCounter(prevCounter => prevCounter + 1);
-          i++;
-        }
+        setReview(prevReview => {
+          if (prevReview < 5000) {
+            return prevReview + 1;
+          }
+          return prevReview; 
+        });
 
-        if(i<=5000){
-          setReview(prevReview => prevReview + 1);
-          i++;
-        }
-      }, 0); // Adjust the interval time if necessary
+        setCounter(prevCounter => {
+          if (prevCounter < 8500) {
+            return prevCounter + 1;
+          }
+          if (prevCounter >= 8500) {
+            clearInterval(interval); 
+          }
+          return prevCounter; 
+        });
+      }, 1); 
 
-      return () => clearInterval(interval); // Cleanup on component unmount
+      return () => clearInterval(interval); 
     };
 
     counterRun();
   }, []);
-  
 
   return (
     <div className='flex flex-col w-full justify-evenly items-center'>
