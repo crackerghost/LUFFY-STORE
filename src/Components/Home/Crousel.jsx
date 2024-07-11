@@ -21,6 +21,7 @@ function Crousel() {
        <button className='font-lato font-bold text-white border border-white w-[200px] h-[65px] transition duration-300 hover:bg-[#B6E9E3] hover:text-black'>SEE MORE</button>
       </div>
       <div className="main-crousel w-[90%]">
+        
 
       </div>
     </div>
