@@ -24,6 +24,9 @@ body{
   --transgray-- : #86a9d171;
   --blue2-- : #84A7CD;
   --blue3-- : #9FBEDB;
+  --blue4-- : rgba(65, 136, 198, 0.39);
+  --blackborder-- : rgba(65, 136, 198, 0.08);
+  --blue5-- : #D9F6FA;
 }
 
 .banner{
@@ -34,7 +37,7 @@ li {
 }
 
 .slider{
-  background-image: url(../public/assets/Slider/banner.svg);
+  background-image: url(/assets/Slider/banner.svg);
   background-size: cover;
 
   @apply h-[400px] w-full flex justify-start p-4 items-center;
@@ -43,7 +46,7 @@ li {
   @apply my-10
 }
 .slider-inner{
-  background-image: url(../public/assets/Slider/sa.svg);
+  background-image: url(/assets/Slider/sa.svg);
   background-size: 165% 100%;
   @apply transition transform duration-200 cursor-pointer hover:scale-105;
 } 
@@ -76,4 +79,84 @@ li {
   clip-path: polygon(0% 0%, 10% 50%, 0% 100%, 100% 100%, 100% 0%);
 
   @apply border bg-white z-0 border-black h-[150px] w-[800px] -translate-x-[20vw] my-16 flex justify-evenly items-center shadow-2xl;
+}
+.inner-crousel{
+  @apply flex justify-center items-center 
+}
+.main-crousel{
+  @apply flex flex-col justify-evenly
+}
+
+
+
+.productCard{
+  @apply flex w-[375px] h-[525px] flex-col m-10
+}
+.productCard img{
+ @apply w-[375px] h-[375px]
+}
+
+.rating{
+  @apply w-[80px] flex justify-evenly items-center
+
+}
+.rating img{
+  @apply w-[10px] h-[10px]
+}
+.productInfo{
+  background: linear-gradient(253deg, #2B8ECF 38.07%, rgba(87, 163, 213, 0.00) 90.98%);
+  @apply w-[375px] h-[150px] p-4 font-bold font-frankhl text-[16px] flex flex-col justify-evenly text-white;
+  
+}
+
+.crousel-btn{
+  @apply w-[50vw] flex justify-start
+}
+.crousel-inner-btn img{
+  @apply w-[150px] h-[50px] -translate-x-20
+}
+
+.crousel-inner-btn {
+  @apply w-[30%] flex justify-start
+}
+
+.left-card,.right-card{
+  @apply w-[675px] h-[500px] rounded-2xl font-lato p-4 flex flex-col justify-evenly items-center text-center;
+}
+.left-card{
+  @apply bg-[--blue4--] backdrop-blur-lg border border-[--blackborder--]
+}
+.right-card{
+  @apply bg-[--blue5--]
+}
+
+.about-slides{
+  @apply flex justify-between w-[100%] h-[60vh]
+}
+
+.about-slides img{
+  @apply w-[289px] h-[289px] translate-x-[100vw]
+}
+
+.contact-us{
+  @apply bg-[#0A84FF] rounded-3xl p-4 w-[185px] h-[45px] flex items-center justify-center text-white transition duration-300 hover:scale-110
+}
+
+.social-banner{
+  @apply flex w-[25%] justify-evenly items-center
+}
+.social-banner img{
+  @apply shadow-2xl rounded-full w-[50px] h-[50px] transition duration-300 hover:scale-110
+}
+
+.footer-design{
+  @apply w-full h-[10vh] flex flex-col
+}
+.footer-design img{
+  @apply absolute w-full
+}
+
+
+footer{
+  @apply flex flex-col justify-evenly items-start w-full h-[80vh] text-center
 }

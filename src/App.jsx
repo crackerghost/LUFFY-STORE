@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react'
 import {BrowserRouter,Routes,Route} from "react-router-dom"
-
 import './App.css'
 import Home from './Components/Home/Home'
 
 function App() {
-
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(()=>{
@@ -31,8 +29,7 @@ function App() {
   }
 
   return (
-
-    <BrowserRouter>
+ <BrowserRouter>
     <Routes>
     <Route path='/' element={<Home/>}/>
     </Routes>
