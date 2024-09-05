@@ -1,15 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Carousel } from "@material-tailwind/react";
+import gsap from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
+
 function Crousel() {
   const videoRef = useRef(null);
 
-  const changeSlide = (index)=>{
+  const changeSlide = (index) => {
     
-  }
+  };
+
   const renderRating = (rating) => {
     let stars = [];
     for (let i = 0; i < rating; i++) {
-      stars.push(<img key={i} src="/assets/Crousel/star1.png" />);
+      stars.push(<img key={i} src="/assets/Crousel/star1.png" alt="star" />);
     }
     return stars;
   };
@@ -51,12 +57,12 @@ function Crousel() {
       price: 3600,
     },
     {
-        img: "/assets/Crousel/tshirt.png",
-        rating: 4,
-        name: "Pastel Coure MR",
-        offerPrice: 2200,
-        price: 3600,
-      }
+      img: "/assets/Crousel/tshirt.png",
+      rating: 4,
+      name: "Pastel Coure MR",
+      offerPrice: 2200,
+      price: 3600,
+    }
   ]);
 
   useEffect(() => {
@@ -68,17 +74,31 @@ function Crousel() {
     }
   }, []);
 
+  useGSAP(() => {
+    gsap.to('.inner-crousel', 
+      { x: "-125vw", 
+        scrollTrigger: {
+          trigger: '.main-crousel',
+          start: 'top 0%',
+          end: 'bottom 100%',
+          scrub: 1,
+          pin : true
+        }
+      }
+    );
+  });
+
   return (
-    <div className="w-[100vw] bg-black flex flex-col">
+    <div className="w-[100vw] bg-black flex flex-col z-40">
       <div className="crousel-flow flex">
         <video
-          className="h-[100%] w-[400px] -translate-x-[8vw]"
+          className="h-[100%] w-[440px] -translate-x-[8vw] z-50"
           ref={videoRef}
           src="/assets/Slider/giyusa.mp4"
           playsInline
           loop
         />
-        <div className="flex flex-col justify-evenly items-start w-[20vw] -translate-x-[20vw]">
+        <div className="flex flex-col justify-evenly items-start w-[30vw] -translate-x-[20vw] z-50">
           <p className="text-white font-frankhl font-bold text-6xl my-24">Best Seller Product</p>
           <p className="text-white font-lato text-center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
@@ -90,13 +110,13 @@ function Crousel() {
             SEE MORE
           </button>
         </div>
-        <div className="main-crousel">
-          <div className="inner-crousel">
-            
+        <div className="backdrop-container -translate-x-[23vw] backdrop-blur-md z-40 flex-grow"></div>
+        <div className="main-crousel z-20 flex-grow">
+          <div className="inner-crousel z-20">
             {product.map((el, index) => {
               return (
                 <div className="productCard" key={index}>
-                  <img src={el.img} alt="" />
+                  <img src={el.img} alt="product" />
                   <div className="productInfo">
                     <div className="rating flex w-[100px]">
                       {renderRating(el.rating)}
@@ -110,17 +130,11 @@ function Crousel() {
                 </div>
               );
             })}
-         
           </div>
-
-          <div className="crousel-btn">
-            <div className="crousel-inner-btn">
+          <div className="w-[30vw] p-16 hidden">
+            <div className=" flex w-[100%] ">
               {product.map((el, index) => {
-                return <img key={index} onClick={
-                   ()=>{
-                    changeSlide(index)
-                   }
-                } src="/assets/Crousel/circle.svg" />;
+                return <img key={index} onClick={() => changeSlide(index)} src="/assets/Crousel/circle.svg" className="flex justify-center w-[200px]" alt="circle" />;
               })}
             </div>
           </div>

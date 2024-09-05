@@ -27,6 +27,7 @@ body{
   --blue4-- : rgba(65, 136, 198, 0.39);
   --blackborder-- : rgba(65, 136, 198, 0.08);
   --blue5-- : #D9F6FA;
+  --backgrop-- : rgba(0, 0, 0, 0.44);
 }
 
 .banner{
@@ -81,10 +82,10 @@ li {
   @apply border bg-white z-0 border-black h-[150px] w-[800px] -translate-x-[20vw] my-16 flex justify-evenly items-center shadow-2xl;
 }
 .inner-crousel{
-  @apply flex justify-center items-center 
+  @apply flex justify-center items-center z-20
 }
 .main-crousel{
-  @apply flex flex-col justify-evenly
+  @apply flex flex-col justify-evenly z-20  
 }
 
 
@@ -110,14 +111,14 @@ li {
 }
 
 .crousel-btn{
-  @apply w-[50vw] flex justify-start
+  @apply w-[25vw] flex justify-start
 }
 .crousel-inner-btn img{
-  @apply w-[150px] h-[50px] -translate-x-20
+  @apply w-[300px] h-[100px] 
 }
 
 .crousel-inner-btn {
-  @apply w-[30%] flex justify-start
+  @apply w-[50%] flex justify-start
 }
 
 .left-card,.right-card{
@@ -159,4 +160,8 @@ li {
 
 footer{
   @apply flex flex-col justify-evenly items-start w-full h-[80vh] text-center
+}
+
+.backdrop-container{
+  @apply bg-[--backdrop--] w-[30vw]
 }
